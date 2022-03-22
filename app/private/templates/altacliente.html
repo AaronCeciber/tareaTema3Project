@@ -1,0 +1,11 @@
+{% from "base/_helpers.html" import generarForm %}
+{% extends "base/base.html" %}
+{% block titulo %}Clientes{% endblock %}
+{% block contenido %}
+<h1>Clientes</h1>
+<div class="row">
+<form enctype="multipart/form-data" method="POST">
+{{  generarForm(form) }}
+</form>
+</div>
+{% endblock %}

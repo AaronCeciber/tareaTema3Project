@@ -1,8 +1,23 @@
+{% from "base/_helpers.html" import generarForm %}
 {% extends "base/base.html" %}
 {% block titulo %}Clientes{% endblock %}
 {% block contenido %}
 <h1>Clientes</h1>
 <div class="row">
-
+<a href="{{ url_for("private.altacliente") }}">Alta cliente</a>
+<form method="POST">
+{{  generarForm(filtro) }}
+</form>
+<table>
+    <th>Listado clientes</th>
+    {% for cliente in clientes %}
+        <tr style="background-color: beige">
+            <td>DNI: {{ cliente.dni }}</td>
+            <td>Nombre: {{ cliente.nombre }}</td>
+            <td>Apellidos: {{ cliente.apellidos }}</td>
+            <td>Imagen: <img src="data:image/jpg;base64,{{ cliente.imagen }}" alt="img_data" id="imgslot"/></td>
+        </tr>
+    {% endfor %}
+</table>
 </div>
 {% endblock %}
