@@ -1,6 +1,6 @@
 import base64
 
-from flask import render_template
+from flask import render_template, redirect, url_for
 
 from . import private
 from .models import Cliente
@@ -24,6 +24,7 @@ def altacliente():
         encoded_string = str(encoded_bytes).replace("b'", "").replace("'", "")
         cliente.imagen = encoded_string
         cliente.create()
+        return redirect(url_for("private.indexcliente"))
 
     return render_template("altacliente.html", form = form)
 
