@@ -1,23 +1,21 @@
 import base64
 
-import password as password
 from flask import render_template, redirect, url_for
 
 from . import private
 from .models import Cliente
 
-from .forms import FormWTF, Filtrocliente, UsuarioForm, LoginForm
+from .forms import FormWTF, Filtrocliente
 from werkzeug.datastructures import CombinedMultiDict
 from flask import request
 
 from ..login.models import Usuario
 
-PEEPER = "ClaveSecretaPeeper"
+
 
 @private.route("/altacliente/", methods=["GET","POST"])
 def altacliente():
     form = FormWTF(CombinedMultiDict((request.files, request.form)))
-    # form = FormWTF(request.form)
     if form.validate_on_submit():
         form.nombre.data
         cliente = Cliente()
@@ -44,37 +42,5 @@ def indexcliente():
     return render_template("indexcliente.html", clientes = clientes, filtro = filtro)
 
 
-# @private.route("/hasheadapeeper/", methods=["GET","POST"])
-# def hasheadapeeper():
-#     error = ""
-#     form = UsuarioForm(request.form)
-#     if form.validate_on_submit():
-#         try:
-#             usuario = Usuario()
-#             usuario.username = form.username.data
-#             password = PEEPER + form.password.data
-#             usuario.set_password(password)
-#             usuario.nombre = form.nombre.data
-#             usuario.apellidos = form.apellidos.data
-#             usuario.dni = form.dni.data
-#             usuario.create()
-#             return redirect(url_for('password.loginhasheadopeeper'))
-#         except Exception as e:
-#             error = "No se ha podido dar de alta " + e.__str__()
-#     return render_template("hasheadapeeper.html", form=form, error=error)
 
 
-@private.route("/loginhasheadopeeper/", methods=["GET","POST"])
-def loginhasheadopeeper():
-    error = ""
-    form = LoginForm(request.form)
-    if form.validate_on_submit():
-        username = form.username.data
-        password = PEEPER + form.password.data
-        usuario = Usuario.get_by_username(username)
-
-        if usuario and usuario.check_password(password):
-            return redirect(url_for("private.indexcliente"))
-        else:
-            error = "Usuario y/o contraseña incorrecta"
-    return render_template("login.html", form=form, error=error)

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from flask_migrate import Migrate
-
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -13,9 +12,11 @@ migrate = Migrate(app, db)
 
 from .public import public
 from .private import private
+from .login import login
 
 def create_app():
 
     app.register_blueprint(public)
     app.register_blueprint(private)
-    return  app
+    app.register_blueprint(login)
+    return app
