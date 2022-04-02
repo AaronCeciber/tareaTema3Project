@@ -31,6 +31,8 @@ def altausuario():
             usuario.set_password(password)
             usuario.nombre = form.nombre.data
             usuario.apellidos = form.apellidos.data
+            if request.form.get('is_admin'):
+                usuario.is_admin = True
             usuario.create()
             return redirect(url_for('login.login'))
         except Exception as e:
