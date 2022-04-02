@@ -4,7 +4,6 @@ from .models import Usuario
 from flask import request
 from . import login
 from flask_login import current_user, logout_user, login_user
-
 from .. import app
 
 PEEPER = "ClaveSecretaPeeper"
@@ -25,7 +24,15 @@ def logout():
 def altausuario():
     app.logger.debug("Entro por /altausuario/")
     error = ""
+
+    if request.method == "POST":
+        if app.recaptcha.verify():
+            msg = "Validación correcta"
+        else:
+            msg = "Validación inválida"
+
     form = UsuarioForm(request.form)
+
     if form.validate_on_submit():
         try:
             usuario = Usuario()
@@ -41,16 +48,25 @@ def altausuario():
         except Exception as e:
             app.logger.exception("No se ha podido dar de alta el usuario " + e.__str__())
             error = "No se ha podido dar de alta el usuario " + e.__str__()
-    return render_template("altausuario.html", form=form, error=error)
+    return render_template("altausuario.html", form=form, error=error, msg=msg)
 
 
 @login.route("/login/", methods=["GET", "POST"])
 def login():
     app.logger.debug("Entro por /login/")
+
     if current_user.is_authenticated:
         return redirect(url_for('public.index'))
     error = ""
+
+    if request.method == "POST":
+        if app.recaptcha.verify():
+            msg = "Validación correcta"
+        else:
+            msg = "Validación inválida"
+
     formlogin = LoginForm(request.form)
+
     if formlogin.validate_on_submit():
         username = formlogin.username.data
         password = PEEPER + formlogin.password.data
@@ -62,7 +78,7 @@ def login():
         else:
             app.logger.error("Usuario y/o contraseña incorrecta " + username)
             error = "Usuario y/o contraseña incorrecta"
-    return render_template("login.html", formlogin=formlogin, error=error)
+    return render_template("login.html", formlogin=formlogin, error=error, msg=msg)
 
 
 

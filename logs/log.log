@@ -681,3 +681,276 @@ TypeError: The view function for 'admin.indexusuario' did not return a valid res
 [2022-04-03 00:29:49,781.781]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
 [2022-04-03 00:29:51,078.78]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
 [2022-04-03 00:29:51,079.79]	 DEBUG [	app.indexusuario:14]	 Entro por /indexusuario/
+[2022-04-03 00:49:48,455.455]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:49:48,455.455]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:49:48,477.477]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:50:55,585.585]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:50:55,585.585]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:50:55,610.610]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:51:03,106.106]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:51:03,106.106]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:51:03,107.107]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:51:03,954.954]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:51:03,954.954]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:51:03,956.956]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:51:04,609.609]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:51:04,609.609]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:51:04,610.610]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:51:05,395.395]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:51:05,395.395]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:51:05,397.397]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:51:12,430.430]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:51:12,430.430]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:51:12,454.454]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:56:32,632.632]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:56:32,632.632]	 INFO [	app.load_user:13]	 ID Usuario actual: 2
+[2022-04-03 00:56:32,655.655]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:56:56,667.667]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:56:56,667.667]	 INFO [	app.load_user:13]	 ID Usuario actual: 2
+[2022-04-03 00:56:56,695.695]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:58:09,361.361]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:58:09,361.361]	 INFO [	app.load_user:13]	 ID Usuario actual: 2
+[2022-04-03 00:58:09,385.385]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 00:59:04,531.531]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:59:04,531.531]	 INFO [	app.load_user:13]	 ID Usuario actual: 2
+[2022-04-03 00:59:04,557.557]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 01:00:27,348.348]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 01:00:27,349.349]	 INFO [	app.load_user:13]	 ID Usuario actual: 2
+[2022-04-03 01:00:27,374.374]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
+[2022-04-03 01:01:06,920.920]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 01:01:06,920.920]	 INFO [	app.load_user:13]	 ID Usuario actual: 2
+[2022-04-03 01:01:06,944.944]	 ERROR [	app.log_exception:1455]	 Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/public/routes.py", line 11, in index
+    return render_template('index.html')
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    ctx.app.update_template_context(context)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 756, in update_template_context
+    context.update(func())
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_recaptcha.py", line 59, in get_code
+    return dict(recaptcha=Markup(self.get_code()))
+NameError: name 'Markup' is not defined
