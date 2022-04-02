@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
@@ -7,8 +8,14 @@ app = Flask(__name__)
 app.secret_key = "ClaveSecreta"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123456@localhost:5432/tareaTema3Project'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+login_manager = LoginManager(app)
+login_manager.login_view = "login.login"
+
+
 
 from .public import public
 from .private import private

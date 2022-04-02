@@ -3,8 +3,21 @@ from .forms import LoginForm, UsuarioForm
 from .models import Usuario
 from flask import request
 from . import login
+from flask_login import current_user, logout_user, login_user
+
+from .. import app
 
 PEEPER = "ClaveSecretaPeeper"
+
+@app.login_manager.user_loader
+def load_user(user_id):
+    return Usuario.get_by_id(user_id)
+
+@login.route("/logout/")
+def logout():
+    logout_user()
+    return redirect(url_for('public.index'))
+
 
 @login.route("/altausuario/", methods=["GET","POST"])
 def altausuario():
@@ -27,6 +40,9 @@ def altausuario():
 
 @login.route("/login/", methods=["GET", "POST"])
 def login():
+
+    if current_user.is_authenticated:
+        return redirect(url_for('public.index'))
     error = ""
     formlogin = LoginForm(request.form)
     if formlogin.validate_on_submit():
@@ -35,9 +51,11 @@ def login():
         usuario = Usuario.get_by_username(username)
 
         if usuario and usuario.check_password(password):
+            login_user(usuario)
             return redirect(url_for("private.indexcliente"))
         else:
             error = "Usuario y/o contraseña incorrecta"
     return render_template("login.html", formlogin=formlogin, error=error)
+
 
 

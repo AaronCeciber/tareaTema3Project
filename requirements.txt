@@ -3,3 +3,5 @@ Flask-SQLAlchemy
 Flask-Migrate
 psycopg2-binary
 Flask-WTF
+Flask-Login
+werkzeug=2.0.0

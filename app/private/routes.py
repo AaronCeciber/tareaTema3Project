@@ -1,6 +1,7 @@
 import base64
 
 from flask import render_template, redirect, url_for
+from flask_login import login_required
 
 from . import private
 from .models import Cliente
@@ -9,7 +10,6 @@ from .forms import FormWTF, Filtrocliente
 from werkzeug.datastructures import CombinedMultiDict
 from flask import request
 
-from ..login.models import Usuario
 
 
 
@@ -33,6 +33,7 @@ def altacliente():
 
 
 @private.route("/indexcliente/", methods=["GET","POST"])
+@login_required
 def indexcliente():
     filtro = Filtrocliente(request.form)
     if filtro.validate_on_submit():
