@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_login import LoginManager
 from flask_migrate import Migrate
+from flask_recaptcha import ReCaptcha
 from flask_sqlalchemy import SQLAlchemy
-
 from logs.logs import configure_logging
 
 app = Flask(__name__)
@@ -17,6 +17,10 @@ login_manager = LoginManager(app)
 login_manager.login_view = "login.login"
 
 logger = configure_logging(__name__)
+
+app.config["RECAPTCHA_SITE_KEY"] = "6LddRD0fAAAAAJ-Q0kITeWqDTEodL1-HCTu4fs0-"
+app.config["RECAPTCHA_SECRET_KEY"] = "6LddRD0fAAAAAGxYZX6FVxi6Pobq-g_Ju1QvABm8"
+recaptcha = ReCaptcha(app)
 
 from .public import public
 from .private import private

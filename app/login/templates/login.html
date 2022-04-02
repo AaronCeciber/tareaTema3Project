@@ -12,9 +12,13 @@
     {% endif %}
     <div class="row">
         <div class="col-sm-4">
+            {% if msg %}
+                {{ msg }}
+            {% endif %}
             <form action="{{ url_for('login.login') }}" method="post">
                 {{ formlogin.csrf_token() }}
                 {{ generarForm(formlogin) }}
+                {{ recaptcha }}
                 <input type="submit" value="Iniciar Sesión" class="btn btn-primary"/>
             </form>
         </div>
