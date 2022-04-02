@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -20,10 +20,12 @@ login_manager.login_view = "login.login"
 from .public import public
 from .private import private
 from .login import login
+from .admin import admin
 
 def create_app():
 
     app.register_blueprint(public)
     app.register_blueprint(private)
     app.register_blueprint(login)
+    app.register_blueprint(admin)
     return app

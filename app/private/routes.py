@@ -14,6 +14,7 @@ from flask import request
 
 
 @private.route("/altacliente/", methods=["GET","POST"])
+@login_required
 def altacliente():
     form = FormWTF(CombinedMultiDict((request.files, request.form)))
     if form.validate_on_submit():
