@@ -10,7 +10,6 @@ from .forms import FormWTF, Filtrocliente
 from werkzeug.datastructures import CombinedMultiDict
 from flask import request
 
-from ..login.models import Usuario
 
 
 

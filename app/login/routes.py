@@ -5,11 +5,18 @@ from flask import request
 from . import login
 from flask_login import current_user, logout_user, login_user
 
+from .. import app
+
 PEEPER = "ClaveSecretaPeeper"
 
-@login.login_manager.user_loader
+@app.login_manager.user_loader
 def load_user(user_id):
     return Usuario.get_by_id(user_id)
+
+@login.route("/logout/")
+def logout():
+    logout_user()
+    return redirect(url_for('public.index'))
 
 
 @login.route("/altausuario/", methods=["GET","POST"])
@@ -51,8 +58,4 @@ def login():
     return render_template("login.html", formlogin=formlogin, error=error)
 
 
-@login.route("/logout/", methods=["GET", "POST"])
-def logout():
-    logout_user()
-    return redirect(url_for('public.index'))
 

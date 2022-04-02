@@ -13,7 +13,9 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 login_manager = LoginManager(app)
-# login_manager.login_view = "login.login"
+login_manager.login_view = "login.login"
+
+
 
 from .public import public
 from .private import private
