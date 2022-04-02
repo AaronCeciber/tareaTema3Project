@@ -11,16 +11,19 @@ PEEPER = "ClaveSecretaPeeper"
 
 @app.login_manager.user_loader
 def load_user(user_id):
+    app.logger.info("ID Usuario actual: " + user_id)
     return Usuario.get_by_id(user_id)
 
 @login.route("/logout/")
 def logout():
+    app.logger.debug("Entro por /logout/")
     logout_user()
     return redirect(url_for('public.index'))
 
 
 @login.route("/altausuario/", methods=["GET","POST"])
 def altausuario():
+    app.logger.debug("Entro por /altausuario/")
     error = ""
     form = UsuarioForm(request.form)
     if form.validate_on_submit():
@@ -36,13 +39,14 @@ def altausuario():
             usuario.create()
             return redirect(url_for('login.login'))
         except Exception as e:
-            error = "No se ha podido dar de alta " + e.__str__()
+            app.logger.exception("No se ha podido dar de alta el usuario " + e.__str__())
+            error = "No se ha podido dar de alta el usuario " + e.__str__()
     return render_template("altausuario.html", form=form, error=error)
 
 
 @login.route("/login/", methods=["GET", "POST"])
 def login():
-
+    app.logger.debug("Entro por /login/")
     if current_user.is_authenticated:
         return redirect(url_for('public.index'))
     error = ""
@@ -56,6 +60,7 @@ def login():
             login_user(usuario)
             return redirect(url_for("private.indexcliente"))
         else:
+            app.logger.error("Usuario y/o contraseña incorrecta " + username)
             error = "Usuario y/o contraseña incorrecta"
     return render_template("login.html", formlogin=formlogin, error=error)
 
