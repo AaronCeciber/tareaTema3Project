@@ -3,7 +3,7 @@ import os
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app import db
+from app import db, app
 
 
 class Usuario(db.Model,UserMixin):
@@ -21,7 +21,9 @@ class Usuario(db.Model,UserMixin):
         try:
             db.session.add(self)
             db.session.commit()
+            app.logger.info("Se ha creado el usuario " + self.__str__())
         except:
+            app.logger.exception("Error al insertar el usuario " + self.__str__())
             raise
 
     @staticmethod

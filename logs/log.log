@@ -1,0 +1,683 @@
+[2022-04-02 23:15:30,988.988]	 ERROR [	app.login:60]	 Usuario y/o contraseña incorrecta
+[2022-04-02 23:17:35,117.117]	 ERROR [	app.login:60]	 Usuario y/o contraseña incorrecta
+[2022-04-02 23:53:32,257.257]	 WARNING [	app.login:65]	 NO se ha validado correctamente el formulario de login
+[2022-04-02 23:54:40,539.539]	 ERROR [	app.login:63]	 Usuario y/o contraseña incorrectausuario5
+[2022-04-02 23:55:24,150.150]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:55:24,152.152]	 INFO [	app.indexcliente:48]	 Consulto todos los clientes
+[2022-04-02 23:55:42,432.432]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:55:42,434.434]	 INFO [	app.indexcliente:45]	 Voy a consultar el cliente con dni: 123456789A
+[2022-04-02 23:55:58,268.268]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:56:20,169.169]	 INFO [	app.create:24]	 Se ha creado el usuario Usuario3$Usuario3$
+[2022-04-02 23:56:34,248.248]	 INFO [	app.create:24]	 Se ha creado el usuario Usuario3$Usuario3$
+[2022-04-02 23:56:43,994.994]	 ERROR [	app.create:26]	 Error al insertar el usuario Usuario3$Usuario3$
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/app/login/models.py", line 23, in create
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3363, in flush
+    self._flush(objects)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3463, in _flush
+    flush_context.execute()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+[SQL: INSERT INTO usuario (username, password, nombre, apellidos, is_admin) VALUES (%(username)s, %(password)s, %(nombre)s, %(apellidos)s, %(is_admin)s) RETURNING usuario.id]
+[parameters: {'username': 'Usuario3$', 'password': 'pbkdf2:sha256:260000$HOR0lhTxdmSCQwwD$2f8706e9131592e086236b59ca8c223ca657701f9c58815a78724f446104d5bd', 'nombre': 'Usuario3$', 'apellidos': 'Usuario3$', 'is_admin': False}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2022-04-02 23:56:43,996.996]	 ERROR [	app.altausuario:42]	 No se ha podido dar de alta el usuario (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+[SQL: INSERT INTO usuario (username, password, nombre, apellidos, is_admin) VALUES (%(username)s, %(password)s, %(nombre)s, %(apellidos)s, %(is_admin)s) RETURNING usuario.id]
+[parameters: {'username': 'Usuario3$', 'password': 'pbkdf2:sha256:260000$HOR0lhTxdmSCQwwD$2f8706e9131592e086236b59ca8c223ca657701f9c58815a78724f446104d5bd', 'nombre': 'Usuario3$', 'apellidos': 'Usuario3$', 'is_admin': False}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/app/login/routes.py", line 39, in altausuario
+    usuario.create()
+  File "/home/aaron/Escritorio/tareaTema3Project/app/login/models.py", line 23, in create
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3363, in flush
+    self._flush(objects)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3463, in _flush
+    flush_context.execute()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+[SQL: INSERT INTO usuario (username, password, nombre, apellidos, is_admin) VALUES (%(username)s, %(password)s, %(nombre)s, %(apellidos)s, %(is_admin)s) RETURNING usuario.id]
+[parameters: {'username': 'Usuario3$', 'password': 'pbkdf2:sha256:260000$HOR0lhTxdmSCQwwD$2f8706e9131592e086236b59ca8c223ca657701f9c58815a78724f446104d5bd', 'nombre': 'Usuario3$', 'apellidos': 'Usuario3$', 'is_admin': False}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2022-04-02 23:58:40,019.19]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:58:40,022.22]	 INFO [	app.indexcliente:48]	 Consulto todos los clientes
+[2022-04-02 23:58:45,280.280]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:59:41,075.75]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:59:47,139.139]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-02 23:59:47,144.144]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_login/utils.py", line 277, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/admin/decorators/decorator.py", line 17, in decorated_function
+    app.logger.warning("Acceso de negado " + current_user)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/werkzeug/local.py", line 335, in r_op
+    return op(other, obj)
+TypeError: can only concatenate str (not "Usuario") to str
+[2022-04-03 00:00:47,290.290]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-03 00:00:51,582.582]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-03 00:00:51,586.586]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_login/utils.py", line 277, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/admin/decorators/decorator.py", line 17, in decorated_function
+    app.logger.warning("Acceso de negado " + current_user.__str__)
+TypeError: can only concatenate str (not "functools.partial") to str
+[2022-04-03 00:01:59,418.418]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-03 00:02:02,931.931]	 INFO [	app.load_user:14]	 Me logueo con el usuario 1
+[2022-04-03 00:02:02,933.933]	 WARNING [	app.decorated_function:17]	 Advertencia de acceso no autorizado
+[2022-04-03 00:02:42,789.789]	 INFO [	app.load_user:14]	 Usuario actual 1
+[2022-04-03 00:02:47,122.122]	 INFO [	app.load_user:14]	 Usuario actual 1
+[2022-04-03 00:02:47,124.124]	 WARNING [	app.decorated_function:17]	 Advertencia de acceso no autorizado
+[2022-04-03 00:03:07,708.708]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:03:11,936.936]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:03:11,937.937]	 WARNING [	app.decorated_function:17]	 Advertencia de acceso no autorizado
+[2022-04-03 00:03:16,797.797]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:03:54,231.231]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:04:06,320.320]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:04:06,416.416]	 ERROR [	app.login:63]	 Usuario y/o contraseña incorrecta usuario1
+[2022-04-03 00:04:16,229.229]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:04:16,308.308]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:04:16,311.311]	 DEBUG [	app.indexcliente:42]	 Entro por /indexcliente/
+[2022-04-03 00:04:16,311.311]	 INFO [	app.indexcliente:48]	 Consulto todos los clientes
+[2022-04-03 00:04:24,505.505]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:04:24,506.506]	 ERROR [	app.log_exception:1455]	 Exception on /altacliente/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask_login/utils.py", line 277, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/aaron/Escritorio/tareaTema3Project/app/private/routes.py", line 36, in altacliente
+    return render_template("altacliente.html", form = form, error = error)
+UnboundLocalError: local variable 'error' referenced before assignment
+[2022-04-03 00:05:23,285.285]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:05:24,581.581]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:05:24,581.581]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:05:27,645.645]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:05:37,783.783]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:05:37,865.865]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:05:37,866.866]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:05:37,866.866]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:05:40,797.797]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:06:00,530.530]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:06:00,540.540]	 INFO [	app.create:17]	 Se ha creado el cliente dni: 123456789Z nombre: nombre apellidos: apellidos
+[2022-04-03 00:06:00,542.542]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:06:00,543.543]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:06:00,544.544]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:06:07,355.355]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:07:01,013.13]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:07:01,015.15]	 WARNING [	app.decorated_function:17]	 Advertencia de acceso no autorizado
+[2022-04-03 00:07:03,847.847]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:07:03,847.847]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:07:09,190.190]	 DEBUG [	app.altausuario:26]	 Entro por /altausuario/
+[2022-04-03 00:07:29,777.777]	 DEBUG [	app.altausuario:26]	 Entro por /altausuario/
+[2022-04-03 00:07:29,852.852]	 ERROR [	app.create:26]	 Error al insertar el usuario Usuario3$Usuario3$
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/app/login/models.py", line 23, in create
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3363, in flush
+    self._flush(objects)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3463, in _flush
+    flush_context.execute()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+[SQL: INSERT INTO usuario (username, password, nombre, apellidos, is_admin) VALUES (%(username)s, %(password)s, %(nombre)s, %(apellidos)s, %(is_admin)s) RETURNING usuario.id]
+[parameters: {'username': 'Usuario3$', 'password': 'pbkdf2:sha256:260000$SD7DUGTzmdyaKVy9$b4990d9675817b7e30a898799d68e85777ea743d4c206cf0a335a8a04454bcaf', 'nombre': 'Usuario3$', 'apellidos': 'Usuario3$', 'is_admin': True}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2022-04-03 00:07:29,854.854]	 ERROR [	app.altausuario:42]	 No se ha podido dar de alta el usuario (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+[SQL: INSERT INTO usuario (username, password, nombre, apellidos, is_admin) VALUES (%(username)s, %(password)s, %(nombre)s, %(apellidos)s, %(is_admin)s) RETURNING usuario.id]
+[parameters: {'username': 'Usuario3$', 'password': 'pbkdf2:sha256:260000$SD7DUGTzmdyaKVy9$b4990d9675817b7e30a898799d68e85777ea743d4c206cf0a335a8a04454bcaf', 'nombre': 'Usuario3$', 'apellidos': 'Usuario3$', 'is_admin': True}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/app/login/routes.py", line 39, in altausuario
+    usuario.create()
+  File "/home/aaron/Escritorio/tareaTema3Project/app/login/models.py", line 23, in create
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1431, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 829, in commit
+    self._prepare_impl()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3363, in flush
+    self._flush(objects)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3503, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3463, in _flush
+    flush_context.execute()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    _emit_insert_statements(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1238, in _emit_insert_statements
+    result = connection._execute_20(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1631, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 326, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1498, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1862, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2043, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1819, in _execute_context
+    self.dialect.do_execute(
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 732, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "usuario_username_key"
+DETAIL:  Key (username)=(Usuario3$) already exists.
+
+[SQL: INSERT INTO usuario (username, password, nombre, apellidos, is_admin) VALUES (%(username)s, %(password)s, %(nombre)s, %(apellidos)s, %(is_admin)s) RETURNING usuario.id]
+[parameters: {'username': 'Usuario3$', 'password': 'pbkdf2:sha256:260000$SD7DUGTzmdyaKVy9$b4990d9675817b7e30a898799d68e85777ea743d4c206cf0a335a8a04454bcaf', 'nombre': 'Usuario3$', 'apellidos': 'Usuario3$', 'is_admin': True}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2022-04-03 00:07:48,264.264]	 DEBUG [	app.altausuario:26]	 Entro por /altausuario/
+[2022-04-03 00:07:48,345.345]	 INFO [	app.create:24]	 Se ha creado el usuario Usuario4$Usuario4$
+[2022-04-03 00:07:48,351.351]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:08:02,816.816]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:08:02,896.896]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:08:02,897.897]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:08:02,898.898]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:08:06,697.697]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:08:06,699.699]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:08:52,850.850]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:08:52,851.851]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:09:45,391.391]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:09:45,391.391]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:09:46,472.472]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:09:46,472.472]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:09:46,480.480]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:09:47,756.756]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:09:57,508.508]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:09:57,589.589]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:09:57,590.590]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:09:57,591.591]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:09:58,187.187]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:09:58,189.189]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:11:22,302.302]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:11:22,302.302]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:11:24,024.24]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:11:24,025.25]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:12:11,149.149]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:12:11,149.149]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:12:12,508.508]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:12:12,508.508]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:12:12,516.516]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:12:13,132.132]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:12:27,716.716]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:12:27,792.792]	 ERROR [	app.login:63]	 Usuario y/o contraseña incorrecta usuario2
+[2022-04-03 00:12:32,598.598]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:12:32,671.671]	 ERROR [	app.login:63]	 Usuario y/o contraseña incorrecta usuario2
+[2022-04-03 00:12:40,255.255]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:12:40,333.333]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:12:40,334.334]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:12:40,334.334]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:12:42,294.294]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:12:42,295.295]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:13:00,736.736]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:13:00,736.736]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:02,315.315]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:02,316.316]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:13:20,908.908]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:13:20,908.908]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:22,260.260]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:22,261.261]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:13:47,023.23]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:13:47,023.23]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:48,293.293]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:48,294.294]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:13:49,402.402]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:13:49,403.403]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:14:57,355.355]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:14:57,355.355]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:14:59,415.415]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:14:59,418.418]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:15:08,390.390]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:15:08,390.390]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:15:09,686.686]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:15:09,686.686]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:15:09,696.696]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:15:10,263.263]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:15:17,490.490]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:15:17,579.579]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:15:17,581.581]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:15:17,582.582]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:15:18,253.253]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:15:18,255.255]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:16:12,204.204]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:16:12,205.205]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:16:13,462.462]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:16:13,463.463]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:16:13,474.474]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:16:15,686.686]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:16:24,244.244]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:16:24,333.333]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:16:24,335.335]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:16:24,336.336]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:16:26,277.277]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:16:26,280.280]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:16:45,853.853]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:16:45,853.853]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:16:47,025.25]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:16:47,025.25]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:16:47,036.36]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:16:52,819.819]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:17:02,391.391]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:17:02,468.468]	 ERROR [	app.login:63]	 Usuario y/o contraseña incorrecta usuario1
+[2022-04-03 00:17:10,442.442]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:17:10,527.527]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:17:10,529.529]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:17:10,530.530]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:17:15,292.292]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:17:15,298.298]	 WARNING [	app.decorated_function:15]	 Advertencia de acceso no autorizado
+[2022-04-03 00:20:01,095.95]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:20:01,096.96]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:20:02,314.314]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:20:02,315.315]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:20:02,325.325]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:20:04,407.407]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:20:14,870.870]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:20:14,960.960]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:20:14,962.962]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:20:14,963.963]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:20:16,326.326]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:20:16,329.329]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:23:12,184.184]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:23:12,184.184]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:23:13,662.662]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:23:13,662.662]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:23:13,669.669]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:23:15,367.367]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:23:22,786.786]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:23:22,864.864]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:23:22,865.865]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:23:22,865.865]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:23:23,821.821]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:23:23,823.823]	 ERROR [	app.log_exception:1455]	 Exception on /indexusuario/ [GET]
+Traceback (most recent call last):
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1526, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1545, in finalize_request
+    response = self.make_response(rv)
+  File "/home/aaron/Escritorio/tareaTema3Project/venv/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'admin.indexusuario' did not return a valid response. The function either returned None or ended without a return statement.
+[2022-04-03 00:24:43,123.123]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:24:43,123.123]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:24:45,114.114]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:25:12,556.556]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:25:12,556.556]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:25:14,604.604]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:25:37,495.495]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:25:37,495.495]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:25:38,601.601]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:25:42,051.51]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:25:42,051.51]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:25:42,059.59]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:25:44,816.816]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:25:57,712.712]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:25:57,793.793]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:25:57,794.794]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:25:57,794.794]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:26:02,718.718]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:26:02,720.720]	 WARNING [	app.decorated_function:15]	 Advertencia de acceso no autorizado
+[2022-04-03 00:26:29,912.912]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:26:29,912.912]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:26:59,149.149]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:26:59,151.151]	 WARNING [	app.decorated_function:15]	 Advertencia de acceso no autorizado
+[2022-04-03 00:27:12,534.534]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:12,535.535]	 WARNING [	app.decorated_function:15]	 Advertencia de acceso no autorizado
+[2022-04-03 00:27:14,419.419]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:27:14,419.419]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:15,264.264]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:27:15,265.265]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:15,271.271]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:27:16,107.107]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:27:25,046.46]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:27:25,124.124]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:25,126.126]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:27:25,126.126]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:27:29,868.868]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:29,869.869]	 WARNING [	app.decorated_function:15]	 Advertencia de acceso no autorizado
+[2022-04-03 00:27:43,883.883]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:27:43,883.883]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:49,491.491]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:49,495.495]	 WARNING [	app.decorated_function:15]	 Advertencia de acceso no autorizado
+[2022-04-03 00:27:54,146.146]	 DEBUG [	app.logout:19]	 Entro por /logout/
+[2022-04-03 00:27:54,147.147]	 INFO [	app.load_user:14]	 ID Usuario actual: 1
+[2022-04-03 00:27:54,152.152]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:27:55,777.777]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:28:01,847.847]	 DEBUG [	app.login:49]	 Entro por /login/
+[2022-04-03 00:28:01,929.929]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:28:01,930.930]	 DEBUG [	app.indexcliente:43]	 Entro por /indexcliente/
+[2022-04-03 00:28:01,931.931]	 INFO [	app.indexcliente:49]	 Consulto todos los clientes
+[2022-04-03 00:28:02,711.711]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:29:49,781.781]	 DEBUG [	app.index:10]	 Entro por /
+[2022-04-03 00:29:49,781.781]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:29:51,078.78]	 INFO [	app.load_user:14]	 ID Usuario actual: 2
+[2022-04-03 00:29:51,079.79]	 DEBUG [	app.indexusuario:14]	 Entro por /indexusuario/
